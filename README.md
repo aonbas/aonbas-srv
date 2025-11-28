@@ -1,3 +1,4 @@
+# PROJECT IS IN ALPHA, AND IS NOT READY FOR PRODUCTION
 # 🚀 aonbas2srv
 
 [![Java Version](https://img.shields.io/badge/Java-21-brightgreen)](https://www.oracle.com/java/)
@@ -110,4 +111,4 @@ We generate releases automatically using [GitHub Actions](https://github.com/x34
 Check the Releases page for the latest JARs.
 
 ## 📝 Maintainers
-Maintained by [Lesslie (x341dev)](https://github.com/x341dev)
+Maintained by [x341dev](https://github.com/x341dev)
