@@ -1,5 +1,13 @@
 plugins {
     id("java")
+    id("org.sonarqube") version "7.0.1.6134"
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "aonbas-srv")
+        property("sonar.projectName", "aonbas server")
+    }
 }
 
 group = "dev.x341.aonbas2srv"
@@ -71,3 +79,4 @@ tasks.register<JavaExec>("runServer") {
     mainClass.set("dev.x341.aonbas2srv.Main")
     classpath = sourceSets["main"].runtimeClasspath
 }
+
