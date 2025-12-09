@@ -5,13 +5,14 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -23,21 +24,22 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: 21
-          distribution: 'temurin'
-          cache: 'gradle'
+          distribution: temurin
+          cache: gradle
 
-      - name: Set up Node (for semantic-release)
+      - name: Set up Node 22
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: 'npm'
 
       - name: Install dependencies for semantic-release
-        run: npm install --frozen-lockfile
+        run: npm ci
 
       - name: Build JAR
         run: ./gradlew jar -x test
 
       - name: Run semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
