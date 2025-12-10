@@ -5,8 +5,8 @@ plugins {
 
 sonar {
     properties {
-        property("sonar.projectKey", "aonbas-srv")
-        property("sonar.projectName", "aonbas server")
+        property("sonar.projectKey", "aonbas_aonbas-srv_1cbf80aa-67be-4601-8baa-5db0a086eda1")
+        property("sonar.projectName", "aonbas-srv")
     }
 }
 
